@@ -23,7 +23,7 @@ export default class extends Device {
     }
 
     this.sensor = await ADS1115.open(parseInt(connection.bus), connection.address || 0x48, 'i2c-bus')
-    this.sensor.gain = 2
+    this.sensor.gain = 1
     
     this.poll(interval || 10000, async () => {
       for (let i in values) {
